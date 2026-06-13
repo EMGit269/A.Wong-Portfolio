@@ -29,6 +29,7 @@
 
   const timers = [];
   const workStartedAt = performance.now();
+  const shimmerDuration = 1350;
   let isCancelled = false;
 
   if (statusBar) {
@@ -60,6 +61,11 @@
 
     element.textContent = text;
     element.dataset.shimmer = text;
+    element.style.setProperty("--shimmer-delay", `${shimmerDelay()}ms`);
+  }
+
+  function shimmerDelay() {
+    return -((performance.now() - workStartedAt) % shimmerDuration);
   }
 
   function thoughtLabel(startTime) {
@@ -79,6 +85,12 @@
 
     statusElement.classList.add("intro-thought-note");
     statusElement.classList.remove("is-thinking");
+    statusElement.style.removeProperty("--shimmer-delay");
+    const textNode = statusElement.querySelector(".intro-status-text");
+    if (textNode) {
+      textNode.style.removeProperty("--shimmer-delay");
+      delete textNode.dataset.shimmer;
+    }
     statusElement.textContent = thoughtLabel(startTime);
   }
 

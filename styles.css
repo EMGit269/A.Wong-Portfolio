@@ -425,7 +425,7 @@ a {
   -webkit-text-fill-color: transparent;
   pointer-events: none;
   animation: metallicSweep 1.35s ease-in-out infinite;
-  animation-delay: -17.2s;
+  animation-delay: var(--shimmer-delay, 0ms);
   will-change: background-position;
 }
 
