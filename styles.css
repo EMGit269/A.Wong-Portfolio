@@ -832,12 +832,14 @@ h1 {
   display: flex;
   align-items: flex-end;
   min-height: 1.08em;
+  line-height: 1;
 }
 
 .hero-name-text {
   display: inline-block;
   min-height: 1.08em;
   color: #111111;
+  line-height: 1;
 }
 
 .hero-name-char {
@@ -851,10 +853,10 @@ h1 {
 .hero-name-cursor {
   display: inline-block;
   width: 1px;
-  height: 0.78em;
+  height: 0.8em;
   margin-left: 8px;
+  margin-bottom: 0.06em;
   background: rgba(17, 17, 17, 0.52);
-  transform: translateY(0.06em);
   animation: heroCursorBlink 920ms steps(1, end) infinite;
 }
 
