@@ -788,7 +788,7 @@ body.intro-complete .page-shell {
 .hero-content {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(180px, 280px);
-  align-items: start;
+  align-items: center;
   gap: clamp(36px, 7vw, 96px);
   padding: 74px 0 34px;
   min-height: calc(100svh - 88px);
@@ -830,11 +830,13 @@ h1 {
 
 .hero-name {
   display: flex;
-  align-items: baseline;
-  min-height: 1em;
+  align-items: flex-end;
+  min-height: 1.08em;
 }
 
 .hero-name-text {
+  display: inline-block;
+  min-height: 1.08em;
   color: #111111;
 }
 
@@ -891,7 +893,8 @@ h1 {
 .hero-avatar {
   width: min(100%, 280px);
   aspect-ratio: 1;
-  margin: 12px 0 0 auto;
+  margin: 0 0 0 auto;
+  align-self: center;
   overflow: hidden;
   border-radius: 0;
 }
@@ -1138,6 +1141,7 @@ h1 {
 
   .hero-content {
     grid-template-columns: 1fr;
+    align-items: start;
     gap: 30px;
     padding-top: 64px;
     min-height: auto;
