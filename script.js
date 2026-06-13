@@ -120,24 +120,37 @@
     }
   }
 
+  function escapeHtml(text) {
+    return text
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;")
+      .replace(/'/g, "&#039;");
+  }
+
   async function typeIntroName(element, speed) {
-    const plainText = element.textContent || "";
-    const strongText = element.querySelector("strong")?.textContent || "";
+    const strongText = element.dataset.name || element.querySelector("strong")?.textContent || "";
+    const plainText = element.dataset.text || element.textContent || "";
+    const bodyText = plainText.startsWith(strongText)
+      ? plainText.slice(strongText.length).trimStart()
+      : plainText.trimStart();
+    const totalLength = strongText.length + bodyText.length;
     element.textContent = "";
     element.classList.add("is-visible");
 
-    for (let index = 1; index <= plainText.length; index += 1) {
+    for (let index = 1; index <= totalLength; index += 1) {
       if (isCancelled) {
         return;
       }
 
-      const current = plainText.slice(0, index);
-      if (strongText && current.length <= strongText.length) {
-        element.innerHTML = `<strong>${current}</strong>`;
-      } else if (strongText) {
-        element.innerHTML = `<strong>${strongText}</strong>${current.slice(strongText.length)}`;
+      if (index <= strongText.length) {
+        element.innerHTML = `<strong>${escapeHtml(strongText.slice(0, index))}</strong>`;
       } else {
-        element.textContent = current;
+        const bodyIndex = index - strongText.length;
+        element.innerHTML = `<strong>${escapeHtml(strongText)}</strong><br>${escapeHtml(
+          bodyText.slice(0, bodyIndex)
+        )}`;
       }
 
       await wait(speed);
