@@ -409,12 +409,12 @@ a {
     rgba(17, 17, 17, 0.22) 54%,
     rgba(17, 17, 17, 0.22) 100%
   );
-  background-size: 240% 100%;
+  background-size: 220% 100%;
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
   -webkit-text-fill-color: transparent;
-  animation: loadingTextSweep 2.8s ease-in-out infinite;
+  animation: loadingTextSweep 3.2s linear infinite;
 }
 
 .intro-message {
@@ -649,11 +649,15 @@ body.intro-playing .intro-entry-card.is-visible {
 
 @keyframes loadingTextSweep {
   0% {
-    background-position: 120% 0;
+    background-position: 110% 0;
+  }
+
+  68% {
+    background-position: -110% 0;
   }
 
   100% {
-    background-position: -120% 0;
+    background-position: -110% 0;
   }
 }
 
