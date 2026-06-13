@@ -48,7 +48,7 @@ a {
   display: flex;
   align-items: flex-start;
   justify-content: center;
-  padding: 28px 36px 40px;
+  padding: 44px 36px 40px;
   overflow-y: scroll;
   scrollbar-gutter: stable;
   pointer-events: auto;
@@ -1027,7 +1027,7 @@ h1 {
 
 @media (max-width: 560px) {
   .intro-overlay {
-    padding: 16px 24px;
+    padding: 28px 24px 16px;
   }
 
   .intro-stage {
