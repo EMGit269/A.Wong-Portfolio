@@ -414,7 +414,7 @@ a {
   -webkit-background-clip: text;
   color: transparent;
   -webkit-text-fill-color: transparent;
-  animation: loadingTextSweep 2.6s ease-in-out infinite;
+  animation: loadingTextSweep 2.6s linear infinite;
 }
 
 .intro-message {
