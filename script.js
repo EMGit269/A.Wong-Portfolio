@@ -249,7 +249,7 @@
       if (typingStatus) {
         typingStatus.classList.add("is-user-typing");
       }
-      await wait(420);
+      await wait(680);
       if (typingStatus) {
         typingStatus.remove();
       }

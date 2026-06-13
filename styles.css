@@ -396,26 +396,25 @@ a {
 }
 
 .intro-status-dot {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: rgba(17, 17, 17, 0.28);
-  animation: statusPulse 1s ease-in-out infinite;
+  display: none;
 }
 
-.intro-toolbar.is-edited .intro-status-dot {
-  background: #1c8f53;
-  animation: none;
-}
-
-.intro-toolbar.is-ready .intro-status-dot {
-  background: #111111;
-  animation: none;
-}
-
-.intro-toolbar.is-output .intro-status-dot {
-  background: rgba(17, 17, 17, 0.28);
-  animation: none;
+.intro-toolbar.is-thinking .intro-status-text,
+.intro-transcript.is-working .intro-transcript-label {
+  background: linear-gradient(
+    105deg,
+    rgba(17, 17, 17, 0.22) 0%,
+    rgba(17, 17, 17, 0.34) 34%,
+    rgba(17, 17, 17, 0.78) 48%,
+    rgba(17, 17, 17, 0.34) 62%,
+    rgba(17, 17, 17, 0.22) 100%
+  );
+  background-size: 220% 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  animation: metallicSweep 1.35s ease-in-out infinite;
 }
 
 .intro-message {
@@ -648,16 +647,13 @@ body.intro-playing .intro-entry-card.is-visible {
     transform 300ms ease;
 }
 
-@keyframes statusPulse {
-  0%,
-  100% {
-    opacity: 0.35;
-    transform: scale(0.82);
+@keyframes metallicSweep {
+  0% {
+    background-position: 120% 0;
   }
 
-  50% {
-    opacity: 1;
-    transform: scale(1);
+  100% {
+    background-position: -120% 0;
   }
 }
 
