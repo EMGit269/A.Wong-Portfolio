@@ -399,6 +399,24 @@ a {
   display: none;
 }
 
+.intro-toolbar.is-thinking .intro-status-text,
+.intro-transcript.is-working .intro-transcript-label {
+  background: linear-gradient(
+    100deg,
+    rgba(17, 17, 17, 0.22) 0%,
+    rgba(17, 17, 17, 0.22) 42%,
+    rgba(17, 17, 17, 0.82) 50%,
+    rgba(17, 17, 17, 0.22) 58%,
+    rgba(17, 17, 17, 0.22) 100%
+  );
+  background-size: 320% 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  animation: loadingTextSweep 1.8s ease-in-out infinite;
+}
+
 .intro-message {
   display: grid;
   width: 100%;
@@ -627,6 +645,16 @@ body.intro-playing .intro-entry-card.is-visible {
   transition:
     opacity 300ms ease,
     transform 300ms ease;
+}
+
+@keyframes loadingTextSweep {
+  0% {
+    background-position: 160% 0;
+  }
+
+  100% {
+    background-position: -160% 0;
+  }
 }
 
 body.intro-playing .page-shell {
