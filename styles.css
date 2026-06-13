@@ -399,22 +399,34 @@ a {
   display: none;
 }
 
-.intro-toolbar.is-thinking .intro-status-text,
-.intro-transcript.is-working .intro-transcript-label {
+.intro-status-text,
+.intro-transcript-label {
+  position: relative;
+  display: inline-block;
+}
+
+.intro-toolbar.is-thinking .intro-status-text::after,
+.intro-transcript.is-working .intro-transcript-label::after {
+  content: attr(data-shimmer);
+  position: absolute;
+  inset: 0;
   background: linear-gradient(
     105deg,
-    rgba(17, 17, 17, 0.22) 0%,
-    rgba(17, 17, 17, 0.34) 34%,
-    rgba(17, 17, 17, 0.78) 48%,
-    rgba(17, 17, 17, 0.34) 62%,
-    rgba(17, 17, 17, 0.22) 100%
+    transparent 0%,
+    rgba(17, 17, 17, 0.2) 34%,
+    rgba(17, 17, 17, 0.82) 48%,
+    rgba(17, 17, 17, 0.2) 62%,
+    transparent 100%
   );
   background-size: 220% 100%;
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
   -webkit-text-fill-color: transparent;
+  pointer-events: none;
   animation: metallicSweep 1.35s ease-in-out infinite;
+  animation-delay: -17.2s;
+  will-change: background-position;
 }
 
 .intro-message {

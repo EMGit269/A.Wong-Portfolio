@@ -50,7 +50,16 @@
     statusBar.classList.add("is-visible");
     statusBar.classList.remove("is-thinking", "is-output", "is-edited", "is-ready");
     statusBar.classList.add(className);
-    statusText.textContent = text;
+    setLoadingText(statusText, text);
+  }
+
+  function setLoadingText(element, text) {
+    if (!element) {
+      return;
+    }
+
+    element.textContent = text;
+    element.dataset.shimmer = text;
   }
 
   function thoughtLabel(startTime) {
@@ -90,7 +99,7 @@
     const textNode = status.querySelector(".intro-status-text");
     status.className = `intro-toolbar is-visible ${className}`;
     if (textNode) {
-      textNode.textContent = text;
+      setLoadingText(textNode, text);
     }
     element.parentElement.insertBefore(status, element);
     return status;
@@ -208,6 +217,7 @@
     const action = transcriptToggle.querySelector(".intro-transcript-action");
     if (label) {
       label.textContent = workLabel();
+      delete label.dataset.shimmer;
     }
     if (action) {
       action.textContent = "";
@@ -223,7 +233,7 @@
     const label = transcriptToggle.querySelector(".intro-transcript-label");
     const action = transcriptToggle.querySelector(".intro-transcript-action");
     if (label) {
-      label.textContent = "工作中";
+      setLoadingText(label, "工作中");
     }
     if (action) {
       action.textContent = "";
