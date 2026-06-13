@@ -743,12 +743,8 @@ body.intro-complete .page-shell {
   align-items: center;
   justify-content: space-between;
   gap: 16px;
-  padding: 15px 18px;
-  background: rgba(255, 255, 255, 0.96);
-  border: 1px solid var(--line);
-  border-radius: var(--radius-lg);
-  backdrop-filter: blur(10px);
-  box-shadow: var(--shadow);
+  padding: 15px 0;
+  border-bottom: 1px solid var(--line);
 }
 
 .brand {
@@ -841,7 +837,7 @@ h1 {
 
 .button.secondary {
   border: 1px solid var(--line);
-  background: rgba(255, 255, 255, 0.88);
+  background: transparent;
 }
 
 .section {
@@ -874,16 +870,18 @@ h1 {
 }
 
 .card {
-  padding: 22px;
-  background: var(--bg-soft);
-  border: 1px solid var(--line);
-  border-radius: var(--radius-md);
-  box-shadow: var(--shadow);
-  backdrop-filter: blur(6px);
+  padding: 0;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  backdrop-filter: none;
 }
 
 .stat-card {
-  min-height: 190px;
+  min-height: 0;
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
 }
 
 .stat-number {
@@ -916,10 +914,11 @@ h1 {
 }
 
 .tag-list li {
-  padding: 8px 12px;
+  padding: 0;
   border: 1px solid var(--line);
-  border-radius: 10px;
-  background: var(--surface-strong);
+  border-width: 0 0 1px;
+  border-radius: 0;
+  background: transparent;
   font-size: 0.94rem;
 }
 
@@ -949,7 +948,13 @@ h1 {
 .project-list,
 .timeline {
   display: grid;
-  gap: 14px;
+  gap: 28px;
+}
+
+.project-card,
+.timeline-item {
+  padding-top: 22px;
+  border-top: 1px solid var(--line);
 }
 
 .project-card h3,
@@ -984,8 +989,9 @@ h1 {
 }
 
 .closing-card {
-  padding: 30px;
-  background: var(--surface);
+  padding-top: 22px;
+  border-top: 1px solid var(--line);
+  background: transparent;
 }
 
 @media (max-width: 860px) {
@@ -1082,9 +1088,12 @@ h1 {
     padding-top: 10px;
   }
 
-  .topbar,
-  .card {
+  .topbar {
     padding: 18px;
+  }
+
+  .card {
+    padding: 0;
   }
 
   h1 {
