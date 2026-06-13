@@ -732,7 +732,7 @@ body.intro-playing .page-shell {
 .page-shell {
   width: min(calc(100% - 32px), var(--max-width));
   margin: 0 auto;
-  padding: 28px 0 72px;
+  padding: 0 0 72px;
   transition:
     opacity 700ms ease,
     transform 700ms ease,
@@ -753,12 +753,21 @@ body.intro-complete .page-shell {
 }
 
 .topbar {
+  position: fixed;
+  top: 18px;
+  left: 50%;
+  z-index: 10;
+  width: min(calc(100% - 32px), var(--max-width));
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 16px;
-  padding: 15px 0;
-  border-bottom: 1px solid var(--line);
+  padding: 14px 18px;
+  border: 1px solid rgba(17, 17, 17, 0.08);
+  background: rgba(255, 255, 255, 0.68);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  transform: translateX(-50%);
 }
 
 .brand {
@@ -771,18 +780,7 @@ body.intro-complete .page-shell {
 .nav-links {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
-  color: var(--muted);
-}
-
-.nav-links a {
-  padding: 7px 10px;
-  border-radius: 10px;
-}
-
-.nav-links a:hover {
-  background: rgba(17, 17, 17, 0.05);
-  color: var(--text);
+  gap: 26px;
 }
 
 .hero-content {
@@ -790,8 +788,8 @@ body.intro-complete .page-shell {
   grid-template-columns: minmax(0, 1fr) minmax(180px, 280px);
   align-items: center;
   gap: clamp(36px, 7vw, 96px);
-  padding: 74px 0 34px;
-  min-height: calc(100svh - 88px);
+  padding: 88px 0 34px;
+  min-height: 100svh;
   flex: 1;
 }
 
@@ -1145,7 +1143,7 @@ h1 {
     grid-template-columns: 1fr;
     align-items: start;
     gap: 30px;
-    padding-top: 64px;
+    padding-top: 86px;
     min-height: auto;
   }
 
@@ -1160,11 +1158,15 @@ h1 {
     margin: 0;
   }
 
-  .topbar,
   .project-meta,
   .timeline-head {
     flex-direction: column;
     align-items: flex-start;
+  }
+
+  .topbar {
+    flex-direction: row;
+    align-items: center;
   }
 }
 
@@ -1218,11 +1220,13 @@ h1 {
 
   .page-shell {
     width: min(calc(100% - 20px), var(--max-width));
-    padding-top: 10px;
+    padding-top: 0;
   }
 
   .topbar {
-    padding: 18px;
+    top: 12px;
+    width: min(calc(100% - 20px), var(--max-width));
+    padding: 14px 16px;
   }
 
   .card {
