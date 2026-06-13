@@ -601,6 +601,16 @@ a {
   font-size: 1.2rem;
 }
 
+.intro-entry-icon svg {
+  width: 24px;
+  height: 24px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
 .intro-entry-copy {
   display: grid;
   gap: 4px;
