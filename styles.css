@@ -821,10 +821,13 @@ h1 {
 
 .hero-name-text {
   color: #111111;
-  transition: color 180ms ease;
 }
 
-.hero-name-text.is-streaming {
+.hero-name-char {
+  color: #111111;
+}
+
+.hero-name-char.is-current {
   color: #b7ff2a;
 }
 

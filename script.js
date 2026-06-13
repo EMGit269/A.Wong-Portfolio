@@ -322,16 +322,34 @@
 
     while (true) {
       const currentName = heroNames[nameIndex % heroNames.length];
-      heroNameText.textContent = "";
-      heroNameText.classList.add("is-streaming");
+      heroNameText.replaceChildren();
 
       for (const character of Array.from(currentName)) {
-        heroNameText.textContent += character;
+        const previousActive = heroNameText.querySelector(".is-current");
+        if (previousActive) {
+          previousActive.classList.remove("is-current");
+        }
+
+        const characterElement = document.createElement("span");
+        characterElement.className = "hero-name-char is-current";
+        characterElement.textContent = character;
+        heroNameText.appendChild(characterElement);
         await waitWithoutCancel(86);
       }
 
-      heroNameText.classList.remove("is-streaming");
-      await waitWithoutCancel(1150);
+      const finalActive = heroNameText.querySelector(".is-current");
+      if (finalActive) {
+        finalActive.classList.remove("is-current");
+      }
+
+      await waitWithoutCancel(1050);
+
+      while (heroNameText.lastChild) {
+        heroNameText.removeChild(heroNameText.lastChild);
+        await waitWithoutCancel(54);
+      }
+
+      await waitWithoutCancel(180);
       nameIndex += 1;
     }
   }
