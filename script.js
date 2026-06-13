@@ -118,6 +118,8 @@
       element.textContent = original.slice(0, index);
       await wait(speed);
     }
+
+    element.classList.add("is-stream-complete");
   }
 
   function escapeHtml(text) {
@@ -155,6 +157,8 @@
 
       await wait(speed);
     }
+
+    element.classList.add("is-stream-complete");
   }
 
   function enterSite() {

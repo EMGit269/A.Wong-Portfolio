@@ -432,7 +432,7 @@ a {
   background: transparent;
   box-shadow: none;
   margin: 0;
-  color: #111111;
+  color: rgba(17, 17, 17, 0.82);
   font-family: "Microsoft YaHei", "Segoe UI", "PingFang SC", sans-serif;
   font-size: clamp(0.98rem, 1.5vw, 1.08rem);
   line-height: 1.42;
@@ -462,7 +462,7 @@ a {
   background: transparent;
   box-shadow: none;
   margin: 2px 0 0;
-  color: #111111;
+  color: rgba(17, 17, 17, 0.82);
   font-family: "Microsoft YaHei", "Segoe UI", "PingFang SC", sans-serif;
   font-size: clamp(0.98rem, 1.5vw, 1.08rem);
   font-weight: 400;
@@ -477,6 +477,19 @@ a {
 
 .intro-name strong {
   font-weight: 700;
+}
+
+.intro-paragraph.is-stream-complete,
+.intro-name.is-stream-complete {
+  color: rgba(17, 17, 17, 0.72);
+  opacity: 0.94;
+  transition:
+    color 520ms ease,
+    opacity 520ms ease;
+}
+
+.intro-name.is-stream-complete strong {
+  color: rgba(17, 17, 17, 0.86);
 }
 
 .intro-edits {
@@ -644,6 +657,14 @@ body.intro-playing .intro-entry-card.is-visible {
   transform: translateY(0) scale(1);
   transition:
     opacity 300ms ease,
+    transform 300ms ease;
+}
+
+body.intro-playing .intro-line.is-visible.is-stream-complete {
+  opacity: 0.94;
+  transition:
+    color 520ms ease,
+    opacity 520ms ease,
     transform 300ms ease;
 }
 
