@@ -29,7 +29,6 @@
 
   const timers = [];
   const workStartedAt = performance.now();
-  const shimmerDuration = 1350;
   let isCancelled = false;
 
   if (statusBar) {
@@ -51,21 +50,7 @@
     statusBar.classList.add("is-visible");
     statusBar.classList.remove("is-thinking", "is-output", "is-edited", "is-ready");
     statusBar.classList.add(className);
-    setLoadingText(statusText, text);
-  }
-
-  function setLoadingText(element, text) {
-    if (!element) {
-      return;
-    }
-
-    element.textContent = text;
-    element.dataset.shimmer = text;
-    element.style.setProperty("--shimmer-delay", `${shimmerDelay()}ms`);
-  }
-
-  function shimmerDelay() {
-    return -((performance.now() - workStartedAt) % shimmerDuration);
+    statusText.textContent = text;
   }
 
   function thoughtLabel(startTime) {
@@ -85,12 +70,6 @@
 
     statusElement.classList.add("intro-thought-note");
     statusElement.classList.remove("is-thinking");
-    statusElement.style.removeProperty("--shimmer-delay");
-    const textNode = statusElement.querySelector(".intro-status-text");
-    if (textNode) {
-      textNode.style.removeProperty("--shimmer-delay");
-      delete textNode.dataset.shimmer;
-    }
     statusElement.textContent = thoughtLabel(startTime);
   }
 
@@ -111,7 +90,7 @@
     const textNode = status.querySelector(".intro-status-text");
     status.className = `intro-toolbar is-visible ${className}`;
     if (textNode) {
-      setLoadingText(textNode, text);
+      textNode.textContent = text;
     }
     element.parentElement.insertBefore(status, element);
     return status;
@@ -229,7 +208,6 @@
     const action = transcriptToggle.querySelector(".intro-transcript-action");
     if (label) {
       label.textContent = workLabel();
-      delete label.dataset.shimmer;
     }
     if (action) {
       action.textContent = "";
@@ -245,7 +223,7 @@
     const label = transcriptToggle.querySelector(".intro-transcript-label");
     const action = transcriptToggle.querySelector(".intro-transcript-action");
     if (label) {
-      setLoadingText(label, "工作中");
+      label.textContent = "工作中";
     }
     if (action) {
       action.textContent = "";

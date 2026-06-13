@@ -399,38 +399,6 @@ a {
   display: none;
 }
 
-.intro-status-text,
-.intro-transcript-label {
-  position: relative;
-  display: inline-block;
-}
-
-.intro-toolbar.is-thinking .intro-status-text::after,
-.intro-transcript.is-working .intro-transcript-label::after {
-  content: attr(data-shimmer);
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    105deg,
-    transparent 0%,
-    transparent 42%,
-    rgba(17, 17, 17, 0.24) 47%,
-    rgba(17, 17, 17, 0.82) 50%,
-    rgba(17, 17, 17, 0.24) 53%,
-    transparent 58%,
-    transparent 100%
-  );
-  background-size: 320% 100%;
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent;
-  -webkit-text-fill-color: transparent;
-  pointer-events: none;
-  animation: metallicSweep 1.35s ease-in-out infinite;
-  animation-delay: var(--shimmer-delay, 0ms);
-  will-change: background-position;
-}
-
 .intro-message {
   display: grid;
   width: 100%;
@@ -659,16 +627,6 @@ body.intro-playing .intro-entry-card.is-visible {
   transition:
     opacity 300ms ease,
     transform 300ms ease;
-}
-
-@keyframes metallicSweep {
-  0% {
-    background-position: 160% 0;
-  }
-
-  100% {
-    background-position: -160% 0;
-  }
 }
 
 body.intro-playing .page-shell {
