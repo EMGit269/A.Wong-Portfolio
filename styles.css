@@ -327,7 +327,7 @@ a {
   color: rgba(17, 17, 17, 0.3);
   cursor: pointer;
   font: inherit;
-  font-size: 0.9rem;
+  font-size: 0.82rem;
   font-weight: 400;
   opacity: 0;
   transform: translateY(6px);
@@ -342,7 +342,7 @@ a {
 }
 
 .intro-skip-enter {
-  font-size: 0.95rem;
+  font-size: 0.88rem;
   line-height: 1;
 }
 
