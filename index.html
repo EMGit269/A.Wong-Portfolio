@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>个人作品集</title>
+    <meta
+      name="description"
+      content="基于 AI 产品、Agent 工作流与原型实践的个人作品展示页。"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body class="intro-playing">
+    <div class="intro-overlay" aria-hidden="true">
+      <div class="intro-stage">
+        <div class="intro-user-prompt" data-step="0">
+          <p class="intro-user-text">用这个简历生成一个 Ellen Wong 的个人主页</p>
+          <button
+            class="intro-attachment"
+            type="button"
+            aria-controls="pdf-preview-panel"
+            aria-expanded="false"
+          >
+            <span class="intro-pdf-icon" aria-hidden="true">PDF</span>
+            <span class="intro-attachment-copy">
+              <span class="intro-attachment-title">东南大学智能建造王汝昊.pdf</span>
+              <span class="intro-attachment-meta">Resume attachment</span>
+            </span>
+          </button>
+        </div>
+        <div class="intro-transcript">
+          <button class="intro-transcript-toggle" type="button" aria-expanded="false">
+            <span class="intro-transcript-label">已工作 0.0 秒</span>
+            <span class="intro-transcript-action" aria-hidden="true">⌄</span>
+          </button>
+          <div class="intro-transcript-body">
+            <div class="intro-toolbar">
+              <span class="intro-status-dot" aria-hidden="true"></span>
+              <span class="intro-status-text">思考中</span>
+            </div>
+            <div class="intro-message">
+              <p class="intro-paragraph intro-line" data-step="2">
+                Reading the resume attachment and extracting portfolio-ready signals: AI product practice, agent workflow design, MVP implementation, and measurable project outcomes.
+              </p>
+              <p class="intro-paragraph intro-line" data-step="3">
+                Mapping the resume into a public homepage structure: hero positioning, capability summary, representative projects, education background, and internship experience.
+              </p>
+              <p class="intro-paragraph intro-line" data-step="4">
+                Selecting CyberMe, BagPal, and VibeSci as project highlights, then rewriting each one into concise portfolio copy with product context, technical contribution, and final result.
+              </p>
+              <p class="intro-paragraph intro-line" data-step="5">
+                Removing private contact details, keeping the page GitHub Pages friendly, and preparing the final preview entry for the generated Ellen Wong portfolio.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="intro-edits intro-line" data-step="10">
+          <div class="intro-edits-head">
+            <span class="intro-edits-copy">
+              <span class="intro-edits-title">已编辑 3 个文件</span>
+              <span class="intro-edits-stats">
+                <span class="delta-add">+214</span>
+                <span class="delta-del">-37</span>
+              </span>
+            </span>
+            <span class="intro-edits-actions">
+              <span>撤销 ↶</span>
+              <span class="intro-review">审核</span>
+            </span>
+          </div>
+          <div class="intro-edit-row">
+            <span class="intro-edit-name">index.html</span>
+            <span class="intro-edit-delta">
+              <span class="delta-add">+68</span>
+              <span class="delta-del">-9</span>
+            </span>
+          </div>
+          <div class="intro-edit-row">
+            <span class="intro-edit-name">styles.css</span>
+            <span class="intro-edit-delta">
+              <span class="delta-add">+103</span>
+              <span class="delta-del">-16</span>
+            </span>
+          </div>
+          <div class="intro-edit-row">
+            <span class="intro-edit-name">script.js</span>
+            <span class="intro-edit-delta">
+              <span class="delta-add">+43</span>
+              <span class="delta-del">-12</span>
+            </span>
+          </div>
+        </div>
+        <p class="intro-name intro-line" data-step="11">
+          <strong>Allen Wong</strong> is an AI product and agent workflow builder with experience shipping 3 AI product MVPs and a complete agent project flow. His strengths include RAG architecture, Agent Skill design, tool calling, prompt engineering, Python, SQL, and rapid MVP development with Codex, Cursor, Antigravity, and Trae.
+        </p>
+        <button class="intro-entry-card" type="button" data-step="12">
+          <span class="intro-entry-icon" aria-hidden="true">↗</span>
+          <span class="intro-entry-copy">
+            <span class="intro-entry-title">Enter Portfolio</span>
+            <span class="intro-entry-subtitle">Open Ellen Wong website</span>
+          </span>
+          <span class="intro-entry-action">Click to enter</span>
+        </button>
+      </div>
+      <aside class="pdf-panel" id="pdf-preview-panel" aria-hidden="true">
+        <div class="pdf-panel-header">
+          <div>
+            <p class="pdf-panel-label">PDF Preview</p>
+            <h2>东南大学智能建造王汝昊.pdf</h2>
+          </div>
+          <button class="pdf-panel-close" type="button" aria-label="关闭 PDF 预览">×</button>
+        </div>
+        <iframe
+          class="pdf-frame"
+          title="PDF resume preview"
+          src="./resume.pdf"
+        ></iframe>
+      </aside>
+    </div>
+    <div class="page-shell">
+      <header class="hero">
+        <nav class="topbar">
+          <div class="brand">Portfolio</div>
+          <div class="nav-links">
+            <a href="#about">关于</a>
+            <a href="#projects">项目</a>
+            <a href="#experience">经历</a>
+          </div>
+        </nav>
+
+        <section class="hero-content">
+          <p class="eyebrow">AI Product · Agent Workflow · MVP Builder</p>
+          <h1>Allen Wong</h1>
+          <p class="hero-copy">
+            聚焦 AI 产品原型、Agent 任务流程设计、前端工作台搭建与快速 MVP
+            落地。以产品化视角组织 RAG、Tool Calling、Agent Skill 与 Vibe Coding 工作流。
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#projects">查看项目</a>
+            <a class="button secondary" href="#experience">查看经历</a>
+          </div>
+        </section>
+      </header>
+
+      <main>
+        <section id="about" class="section">
+          <div class="section-heading">
+            <p class="section-label">About</p>
+            <h2>能力概览</h2>
+          </div>
+          <div class="grid cards-3">
+            <article class="card stat-card">
+              <span class="stat-number">3+</span>
+              <p class="stat-title">AI 产品 MVP</p>
+              <p class="muted">
+                覆盖陪伴式产品、物品管理助手、科研方法复用平台等方向。
+              </p>
+            </article>
+            <article class="card stat-card">
+              <span class="stat-number">1</span>
+              <p class="stat-title">完整 Agent 流程实践</p>
+              <p class="muted">
+                包含需求拆解、技能封装、工具调用、评测与前端工作台联动。
+              </p>
+            </article>
+            <article class="card stat-card">
+              <span class="stat-number">25%</span>
+              <p class="stat-title">任务通过率提升</p>
+              <p class="muted">
+                在 AI 建模 Agent 评测中，通过规则校验与多层评测优化得到提升。
+              </p>
+            </article>
+          </div>
+
+          <div class="grid cards-2">
+            <article class="card">
+              <h3>技术侧能力</h3>
+              <ul class="tag-list">
+                <li>Python</li>
+                <li>SQL</li>
+                <li>Prompt Engineering</li>
+                <li>Tool Calling</li>
+                <li>RAG</li>
+                <li>React</li>
+                <li>Android Studio</li>
+                <li>Arduino</li>
+              </ul>
+            </article>
+            <article class="card">
+              <h3>产品侧能力</h3>
+              <ul class="feature-list">
+                <li>需求拆解与竞品分析</li>
+                <li>Agent 能力结构设计</li>
+                <li>低保真/高保真原型搭建</li>
+                <li>工作流设计与评测体系建立</li>
+                <li>从概念到 MVP 的快速落地</li>
+              </ul>
+            </article>
+          </div>
+        </section>
+
+        <section id="projects" class="section">
+          <div class="section-heading">
+            <p class="section-label">Projects</p>
+            <h2>代表项目</h2>
+          </div>
+
+          <div class="project-list">
+            <article class="card project-card">
+              <div class="project-meta">
+                <span>2026.05 - 2026.06</span>
+                <span>AI 陪伴 / 城市探索</span>
+              </div>
+              <h3>CyberMe</h3>
+              <p>
+                围绕“本地生活探索决策困难”场景，构建 AI
+                陪伴与城市探索产品 MVP，覆盖地图探索 Agent、虚拟人物对话、
+                用户记忆与成就体系。
+              </p>
+              <ul class="feature-list">
+                <li>设计城市探索 Agent 的产品结构与交互逻辑</li>
+                <li>基于 React 与地图工具构建探索体验</li>
+                <li>建立长期记忆机制，支撑个性化推荐与持续互动</li>
+              </ul>
+            </article>
+
+            <article class="card project-card">
+              <div class="project-meta">
+                <span>2026.03 - 2026.04</span>
+                <span>AI 软硬件产品</span>
+              </div>
+              <h3>BagPal</h3>
+              <p>
+                面向“易遗失、易忘带、差旅焦虑”场景的物品管理助手，结合 RFID
+                扫描、App 控制与 Agent 任务协同，完成软硬件联动闭环。
+              </p>
+              <ul class="feature-list">
+                <li>基于 ReAct 思路设计高频任务工作流</li>
+                <li>统一日程 Schema，减少无效工具调用</li>
+                <li>通过长期记忆设计提升个性化提醒准确度</li>
+              </ul>
+            </article>
+
+            <article class="card project-card">
+              <div class="project-meta">
+                <span>2025.11 - 2025.12</span>
+                <span>AI4Sci / 方法复用</span>
+              </div>
+              <h3>VibeSci</h3>
+              <p>
+                为科研任务中的方法复用与流程管理设计 Web 平台，采用“项目 -
+                任务 - 方法”三级结构，支持科研方法跨项目复用。
+              </p>
+              <ul class="feature-list">
+                <li>完成平台整体信息架构与交互原型</li>
+                <li>采用 Agent Skill 方案组织结构化方法记录</li>
+                <li>在短周期内完成 MVP 并开展小规模测试</li>
+              </ul>
+            </article>
+          </div>
+        </section>
+
+        <section id="experience" class="section">
+          <div class="section-heading">
+            <p class="section-label">Experience</p>
+            <h2>经历摘要</h2>
+          </div>
+
+          <div class="timeline">
+            <article class="card timeline-item">
+              <div class="timeline-head">
+                <h3>南京 ADD 加舍建筑</h3>
+                <span>2026.03 - 2026.06</span>
+              </div>
+              <p class="timeline-role">AI Agent 全栈实习生</p>
+              <p>
+                参与面向低代码建模平台的 Agent
+                能力建设，覆盖需求拆解、Skill
+                体系封装、前端工作台开发与评测体系设计。
+              </p>
+              <ul class="feature-list">
+                <li>构建建模 Agent 核心能力架构与复用机制</li>
+                <li>建立“规则校验 + 视觉模型评分 + 人工抽检”评测体系</li>
+                <li>推动任务通过率提升 25%，平均重试轮次降低 30%</li>
+              </ul>
+            </article>
+
+            <article class="card timeline-item">
+              <div class="timeline-head">
+                <h3>东南大学</h3>
+                <span>2025.09 - 至今</span>
+              </div>
+              <p class="timeline-role">智能设计与先进制造 · 硕士在读</p>
+              <p>
+                关注 AI、计算设计、环境行为数据与数智建造相关方向，持续进行 AI
+                产品与工作流实践。
+              </p>
+            </article>
+
+            <article class="card timeline-item">
+              <div class="timeline-head">
+                <h3>苏州大学</h3>
+                <span>2019.09 - 2025.08</span>
+              </div>
+              <p class="timeline-role">材料学 / 建筑学 · 本科</p>
+              <p>
+                本科阶段完成跨专业学习，累计形成编程基础、设计表达与建筑场景理解能力。
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="card closing-card">
+            <p class="section-label">Next Step</p>
+            <h2>这个版本已经可以直接作为 GitHub Pages 首页</h2>
+            <p>
+              当前页面刻意保留了匿名化表达，没有展示电话、邮箱等敏感信息。后续可以继续补充：
+              项目截图、在线演示链接、GitHub 仓库链接、个人介绍与联系方式。
+            </p>
+          </div>
+        </section>
+      </main>
+    </div>
+    <script src="./script.js"></script>
+  </body>
+</html>
