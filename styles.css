@@ -711,6 +711,18 @@ body.intro-playing .intro-user-prompt.is-visible {
   }
 }
 
+@keyframes heroCursorBlink {
+  0%,
+  46% {
+    opacity: 1;
+  }
+
+  47%,
+  100% {
+    opacity: 0;
+  }
+}
+
 body.intro-playing .page-shell {
   opacity: 0.28;
   filter: blur(14px) brightness(1.02) saturate(0.86);
@@ -799,6 +811,31 @@ h1 {
   font-size: clamp(2.5rem, 5vw, 4.8rem);
   line-height: 1;
   letter-spacing: 0;
+}
+
+.hero-name {
+  display: flex;
+  align-items: baseline;
+  min-height: 1em;
+}
+
+.hero-name-text {
+  color: #111111;
+  transition: color 180ms ease;
+}
+
+.hero-name-text.is-streaming {
+  color: #b7ff2a;
+}
+
+.hero-name-cursor {
+  display: inline-block;
+  width: 1px;
+  height: 0.78em;
+  margin-left: 8px;
+  background: rgba(17, 17, 17, 0.52);
+  transform: translateY(0.06em);
+  animation: heroCursorBlink 920ms steps(1, end) infinite;
 }
 
 .hero-copy {

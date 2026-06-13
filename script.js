@@ -27,8 +27,10 @@
   const lines = Array.from(document.querySelectorAll(".intro-message .intro-line"));
   const editsPanel = document.querySelector(".intro-edits");
   const nameLine = document.querySelector(".intro-name");
+  const heroNameText = document.querySelector(".hero-name-text");
 
   const timers = [];
+  const heroNames = ["王汝昊", "Wang Ruhuao", "Allan Wong"];
   const workStartedAt = performance.now();
   let isCancelled = false;
 
@@ -40,6 +42,12 @@
     return new Promise(function (resolve) {
       const timer = window.setTimeout(resolve, ms);
       timers.push(timer);
+    });
+  }
+
+  function waitWithoutCancel(ms) {
+    return new Promise(function (resolve) {
+      window.setTimeout(resolve, ms);
     });
   }
 
@@ -305,6 +313,29 @@
     }
   }
 
+  async function runHeroNameLoop() {
+    if (!heroNameText) {
+      return;
+    }
+
+    let nameIndex = 0;
+
+    while (true) {
+      const currentName = heroNames[nameIndex % heroNames.length];
+      heroNameText.textContent = "";
+      heroNameText.classList.add("is-streaming");
+
+      for (const character of Array.from(currentName)) {
+        heroNameText.textContent += character;
+        await waitWithoutCancel(86);
+      }
+
+      heroNameText.classList.remove("is-streaming");
+      await waitWithoutCancel(1150);
+      nameIndex += 1;
+    }
+  }
+
   if (entryCard) {
     entryCard.addEventListener("click", enterSite, { once: true });
   }
@@ -343,4 +374,5 @@
   );
 
   runIntro();
+  runHeroNameLoop();
 })();
