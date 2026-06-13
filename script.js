@@ -110,25 +110,21 @@
     element.textContent = "";
     element.classList.add("is-visible");
 
-    for (let index = 1; index <= original.length; index += 1) {
+    for (const character of Array.from(original)) {
       if (isCancelled) {
         return;
       }
 
-      element.textContent = original.slice(0, index);
+      appendStreamCharacter(element, character);
       await wait(speed);
     }
-
-    element.classList.add("is-stream-complete");
   }
 
-  function escapeHtml(text) {
-    return text
-      .replace(/&/g, "&amp;")
-      .replace(/</g, "&lt;")
-      .replace(/>/g, "&gt;")
-      .replace(/"/g, "&quot;")
-      .replace(/'/g, "&#039;");
+  function appendStreamCharacter(parent, character) {
+    const span = document.createElement("span");
+    span.className = "intro-stream-char";
+    span.textContent = character;
+    parent.appendChild(span);
   }
 
   async function typeIntroName(element, speed) {
@@ -137,28 +133,32 @@
     const bodyText = plainText.startsWith(strongText)
       ? plainText.slice(strongText.length).trimStart()
       : plainText.trimStart();
-    const totalLength = strongText.length + bodyText.length;
     element.textContent = "";
     element.classList.add("is-visible");
 
-    for (let index = 1; index <= totalLength; index += 1) {
+    const strong = document.createElement("strong");
+    element.appendChild(strong);
+
+    for (const character of Array.from(strongText)) {
       if (isCancelled) {
         return;
       }
 
-      if (index <= strongText.length) {
-        element.innerHTML = `<strong>${escapeHtml(strongText.slice(0, index))}</strong>`;
-      } else {
-        const bodyIndex = index - strongText.length;
-        element.innerHTML = `<strong>${escapeHtml(strongText)}</strong><br>${escapeHtml(
-          bodyText.slice(0, bodyIndex)
-        )}`;
-      }
+      appendStreamCharacter(strong, character);
 
       await wait(speed);
     }
 
-    element.classList.add("is-stream-complete");
+    element.appendChild(document.createElement("br"));
+
+    for (const character of Array.from(bodyText)) {
+      if (isCancelled) {
+        return;
+      }
+
+      appendStreamCharacter(element, character);
+      await wait(speed);
+    }
   }
 
   function enterSite() {

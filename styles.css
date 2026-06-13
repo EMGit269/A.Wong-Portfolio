@@ -479,17 +479,9 @@ a {
   font-weight: 700;
 }
 
-.intro-paragraph.is-stream-complete,
-.intro-name.is-stream-complete {
-  color: rgba(17, 17, 17, 0.72);
-  opacity: 0.94;
-  transition:
-    color 520ms ease,
-    opacity 520ms ease;
-}
-
-.intro-name.is-stream-complete strong {
-  color: rgba(17, 17, 17, 0.86);
+.intro-stream-char {
+  opacity: 0;
+  animation: streamCharacterFade 180ms ease-out forwards;
 }
 
 .intro-edits {
@@ -660,14 +652,6 @@ body.intro-playing .intro-entry-card.is-visible {
     transform 300ms ease;
 }
 
-body.intro-playing .intro-line.is-visible.is-stream-complete {
-  opacity: 0.94;
-  transition:
-    color 520ms ease,
-    opacity 520ms ease,
-    transform 300ms ease;
-}
-
 @keyframes loadingTextSweep {
   0% {
     background-position: 160% 0;
@@ -675,6 +659,16 @@ body.intro-playing .intro-line.is-visible.is-stream-complete {
 
   100% {
     background-position: -160% 0;
+  }
+}
+
+@keyframes streamCharacterFade {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
   }
 }
 
