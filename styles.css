@@ -517,8 +517,9 @@ a {
 .intro-edits-stats {
   display: inline-flex;
   gap: 6px;
-  font-family: Consolas, "SFMono-Regular", monospace;
+  font-family: "Microsoft YaHei", "Segoe UI", "PingFang SC", sans-serif;
   font-size: 0.92rem;
+  font-variant-numeric: tabular-nums;
 }
 
 .intro-edits-actions {
@@ -544,13 +545,14 @@ a {
   gap: 12px;
   padding: 13px 20px;
   color: rgba(17, 17, 17, 0.88);
-  font-family: Consolas, "SFMono-Regular", monospace;
+  font-family: "Microsoft YaHei", "Segoe UI", "PingFang SC", sans-serif;
   font-size: 0.92rem;
 }
 
 .intro-edit-delta {
   display: inline-flex;
   gap: 6px;
+  font-variant-numeric: tabular-nums;
 }
 
 .delta-add {
