@@ -304,7 +304,7 @@ a {
   background: rgba(255, 255, 255, 0.96);
   box-shadow: 0 8px 24px rgba(17, 17, 17, 0.035);
   opacity: 0;
-  transform: translate(18px, 18px);
+  transform: none;
 }
 
 .intro-user-text {
@@ -688,7 +688,7 @@ body.intro-playing .intro-entry-card.is-visible {
 }
 
 body.intro-playing .intro-user-prompt.is-visible {
-  transform: translate(0, 0);
+  transform: none;
 }
 
 @keyframes loadingTextSweep {
