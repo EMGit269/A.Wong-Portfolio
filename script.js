@@ -17,6 +17,7 @@
   const statusBar = document.querySelector(".intro-toolbar");
   const statusText = document.querySelector(".intro-status-text");
   const userPrompt = document.querySelector('.intro-user-prompt[data-step="0"]');
+  const skipButton = document.querySelector(".intro-skip-button");
   const pdfAttachment = document.querySelector(".intro-attachment");
   const pdfPanel = document.querySelector(".pdf-panel");
   const pdfClose = document.querySelector(".pdf-panel-close");
@@ -258,6 +259,9 @@
         typingStatus.remove();
       }
       userPrompt.classList.add("is-visible");
+      if (skipButton) {
+        skipButton.classList.add("is-visible");
+      }
       await wait(260);
     }
 
@@ -303,6 +307,10 @@
 
   if (entryCard) {
     entryCard.addEventListener("click", enterSite, { once: true });
+  }
+
+  if (skipButton) {
+    skipButton.addEventListener("click", enterSite, { once: true });
   }
 
   if (pdfAttachment) {

@@ -314,6 +314,30 @@ a {
   line-height: 1.65;
 }
 
+.intro-skip-button {
+  justify-self: end;
+  width: fit-content;
+  margin-top: -12px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: rgba(17, 17, 17, 0.42);
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.9rem;
+  font-weight: 600;
+  opacity: 0;
+  transform: translateY(6px);
+  transition:
+    color 160ms ease,
+    opacity 300ms ease,
+    transform 300ms ease;
+}
+
+.intro-skip-button:hover {
+  color: rgba(17, 17, 17, 0.62);
+}
+
 .intro-attachment {
   display: inline-grid;
   grid-template-columns: auto 1fr;
@@ -643,6 +667,7 @@ a {
 body.intro-playing .intro-line.is-visible,
 body.intro-playing .intro-thought-note.is-visible,
 body.intro-playing .intro-user-prompt.is-visible,
+body.intro-playing .intro-skip-button.is-visible,
 body.intro-playing .intro-toolbar.is-visible,
 body.intro-playing .intro-name.is-visible,
 body.intro-playing .intro-edits.is-visible,
